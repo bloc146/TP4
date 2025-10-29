@@ -15,5 +15,11 @@ jobs:
           python-version: "3.9"
       - name: Install packages
         run: pip install -r requirements.txt
-      - name: Run tests
-        run: python manage.py test
+      - name: Run git bisect to identify first bad commit
+        env:
+          # Optional: override these if you want explicit SHAs; by default the script
+          # uses HEAD as bad and the initial commit as good.
+          GOOD_HASH: "e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c"
+          BAD_HASH: "c1a4be04b972b6c17db242fc37752ad517c29402"
+          BISECT_TEST_CMD: "python manage.py test -q"
+        run: python myscript.py
