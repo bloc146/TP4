@@ -21,5 +21,5 @@ jobs:
           # uses HEAD as bad and the initial commit as good.
           GOOD_HASH: "e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c"
           BAD_HASH: "c1a4be04b972b6c17db242fc37752ad517c29402"
-          BISECT_TEST_CMD: "python manage.py test -q"
+          BISECT_TEST_CMD: "python manage.py test"
         run: python myscript.py
